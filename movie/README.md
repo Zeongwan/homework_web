@@ -40,7 +40,7 @@ main body:
     2. 10px of space between the edge of the section and the text of the list.
     3. text of overview: background: #A2B964, text: 8pt in Arial,
     4. section: Each term is bolded and has 1em of vertical separation between it and the element that precedes it.
-    5. botton: link to http://www.tmnt.com/.
+    5. bottom: link to http://www.tmnt.com/.
 
   bottom:
    Below the set of reviews is a bar with centered text explaining that the page shows reviews 1-8 of 88. This bar has a background color of #A2B964 and is placed directly up against its surrounding content. 5px separate the edge of its text and the element's own outer edge.
