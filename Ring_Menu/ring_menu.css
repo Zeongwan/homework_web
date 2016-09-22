@@ -1,0 +1,93 @@
+#at-plus-container {
+    
+}
+#bottom-positioner {
+    
+}
+#button {
+    
+}
+/*
+.basicbutton {
+    border: 2px solid;
+    border-radius: 100%;
+    background-color: rgb(48, 63, 159);
+    width: 100px;
+    height: 100px;
+    color:black;
+}
+*/
+#info-bar {
+    
+}
+/*-------------------the big circle*/
+.info {
+    background-color: gray;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+/*----------------------------------------*/
+
+.page {
+    display: block;
+}
+.user {
+    
+}
+.comment {
+    
+}
+
+.mine {
+    
+}
+.posted {
+    display: inline;
+}
+.like {
+    display: inline;
+}
+
+
+#control-ring-container {
+    
+}
+#control-ring {
+
+}
+.mask {
+    
+}
+.button {
+    background-color: gray;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+.button img {
+    display: block;
+    padding: 14px;
+    margin: auto;
+}
+.unread {
+
+}
+.history {
+    
+}
+.message {
+
+}
+.setting {
+    
+}
+.sign {
+    
+}
+.apb {
+    
+}
+.icon {
+    
+}
