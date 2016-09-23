@@ -2,10 +2,15 @@
     
 }
 #bottom-positioner {
-    
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
 }
 #button {
     
+}
+#button:hover {
+    visibility: visible;
 }
 /*
 .basicbutton {
