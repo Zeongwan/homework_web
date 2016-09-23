@@ -4,25 +4,17 @@
 
 #at-plus-container {}
 
-#bottom-positioner {
-
-}
+#bottom-positioner {}
 
 
-/*本来用来控制动态效果的，现在用来控制位置*/
+/*表示整个有效果的区*/
+
 .hovereffect {
     position: absolute;
     bottom: 20%;
     left: 300px;
     margin: auto;
 }
-
-/*这里已经不用写了 因为下面的hover已经实现了*/
-
-.trans {}
-
-
-/*hovereffect表示一碰到那个类就会实现的效果*/
 
 
 /*用来控制鼠标触碰到的时候的动态的*/
@@ -36,45 +28,54 @@
 
 
 /*设置为hidden为了实现显示*/
-.bigger {
-    background-color: gray;
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
-}
+
 .hovereffect:hover .basic {
     width: 90px;
     height: 90px;
     border-radius: 100%;
-    transition-duration: all;
+    transition-property: all;
     transition-duration: 2s;
 }
+
 #first {
     position: relative;
     left: 19px;
-    top:19px;
+    top: 19px;
 }
-.hovereffect:hover .basic #first{
+
+
+/*设置当鼠标碰到第一个@+的时候 会消失*/
+
+.hovereffect:hover .basic #first {
     transition-duration: visibility;
     transition-duration: 0s;
     visibility: hidden;
     opacity: 0;
 }
+
+
+/*大的@+会一开始是隐藏的 后来变出来*/
+
 #second {
     position: relative;
     visibility: hidden;
     left: 13px;
     opacity: 0;
 }
-.hovereffect:hover .basic #second{
+
+
+/*遇到第一个@+的消失效果*/
+
+.hovereffect:hover .basic #second {
     transition-duration: visibility;
     transition-duration: 2s;
     visibility: visible;
     opacity: 1;
 }
+
+
+/*第一个按钮跟所有的button的共同属性*/
+
 .basic,
 .button {
     background-color: gray;
@@ -85,10 +86,16 @@
     margin: auto;
 }
 
+
+/*第一个按钮的宽高跟别的不一样*/
+
 .basic {
     width: 60px;
     height: 60px;
 }
+
+
+/*设置自己的宽高 同时设置了transition是为了使得回到原点的时候的效果*/
 
 .button {
     width: 50px;
@@ -96,12 +103,11 @@
     visibility: hidden;
     opacity: 0;
     transition-property: all;
-    transition-duration: 5s;
+    transition-duration: 1s;
 }
 
 
 /*把所有的button中间的图片设置在中间*/
-
 
 .button img {
     padding: 15px;
@@ -123,39 +129,78 @@ li {
 .info {
     background-color: gray;
     border-radius: 100%;
-    height: 100px;
-    width: 100px;
+    height: 130px;
+    width: 130px;
+    left: 270px;
 }
 
 
 /*实现动态效果*/
 
-.hovereffect:hover .info {
+.hovereffect:hover .info,
+.mask,
+.history,
+.message,
+.setting,
+.sign {
     transition-property: all;
     visibility: visible;
-    transition-duration: 5s;
-    transform: translate(120px, -120px);
+    transition-duration: 1.5s;
+}
+
+.hovereffect:hover .info {
+    transform: translate(0px, -120px);
 }
 
 
-/*----------------------------------------*/
+/*-----------------以下为了设置大圈圈里面的各个位置的信息---------------------*/
 
 .page {
-    display: block;
+    height: 30px;
 }
 
-.user {}
+.user {
+    position: relative;
+    bottom: 20px;
+    right: 10px;
+}
 
-.comment {}
+.usernum {
+    color: white;
+    font-size: 15pt;
+    position: relative;
+    bottom: 16px;
+    right: 12px;
+}
 
-.mine {}
+.comment {
+    position: relative;
+    bottom: 20px;
+    right: 10px;
+}
+
+.mine {
+    height: 30px;
+}
+
+.minenum {
+    color: green;
+    font-size: 18pt;
+    position: relative;
+    bottom: 16px;
+    right: 10px;
+}
 
 .posted {
-    display: inline;
+    position: relative;
+    bottom: 15px;
+    right: 40px;
 }
 
 .like {
-    display: inline;
+    position: relative;
+    bottom: 45px;
+    left: 15px;
 }
 
 #control-ring-container {}
@@ -168,45 +213,38 @@ li {
 }
 
 .hovereffect:hover .mask {
-    transition-property: all;
-    visibility: visible;
-    transition-duration: 5s;
-    transform: translate(-160px, 50px);
+    transform: translate(-80px, -80px);
 }
 
-.unread {}
+.unread {
+    display: block;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    left: 35px;
+    bottom: 50px;
+    color: white;
+    background-color: red;
+    border-radius: 100%;
+    text-align: center;
+}
 
 .hovereffect:hover .history {
-    transition-property: all;
-    visibility: visible;
-    transition-duration: 5s;
-    transform: translate(-180px, 110px);
+    transform: translate(-100px, -12px);
 }
 
 .hovereffect:hover .message {
-    transition-property: all;
-    visibility: visible;
-    transition-duration: 5s;
-    transform: translate(-200px, 120px);
+    transform: translate(-80px, 55px);
 }
 
 .hovereffect:hover .setting {
-    transition-property: all;
-    visibility: visible;
-    transition-duration: 5s;
-    transform: translate(-180px, 130px);
+    transform: translate(-10px, 80px);
 }
 
 .hovereffect:hover .sign {
-    transition-property: all;
-    visibility: visible;
-    transition-duration: 2s;
-    transition-timing-function: ease-out;
-    transform: translate(-160px, 140px);
+    transform: translate(70px, 70px);
 }
 
 .apb {}
 
-.icon {
-
-}
+.icon {}
