@@ -1,3 +1,4 @@
+/*设置所有元素的位置在整个页面的中间*/
 
 #at-plus-container {
     position: absolute;
@@ -6,39 +7,56 @@
     margin: auto;
 }
 
-#bottom-positioner {
+
+/*设置几个类跟id的样式 其中button和info表示一个大类*/
+
+#bottom-positioner,
+.button,
+.info {
     background-color: gray;
     border-radius: 100%;
     position: absolute;
-    bottom: 20%;
-    left: 300px;
-    margin: auto;
     width: 60px;
     height: 60px;
     border-radius: 100%;
+}
+
+
+/*一开始是一个白色的@+*/
+
+#bottom-positioner {
+    bottom: 20%;
+    left: 300px;
+    margin: auto;
     background-image: url(assets/images/atplus_white.png);
     background-position: center;
     background-repeat: no-repeat;
-}
-
-
-/*用来控制鼠标触碰到的时候的动态的*/
-
-#at-plus-container:hover .button {
     transition-property: all;
-    visibility: visible;
-    transition-duration: 3s;
-    opacity: 1;
+    transition-timing-function: ease-out;
+    transition-duration: 1s;
 }
-#at-plus-container:hover .info {
+
+
+/*添加transition是为了使得在动态效果完成以后恢复过程中实现平滑*/
+
+.button,
+.info {
+    right: 0px;
+    bottom: 0%;
+    visibility: hidden;
+    opacity: 0;
     transition-property: all;
-    visibility: visible;
-    transition-duration: 3s;
-    opacity: 1;
+    transition-duration: 1s;
+}
+
+.info {
+    height: 130px;
+    width: 130px;
+    right: -35px;
 }
 
 
-/*设置为hidden为了实现显示*/
+/*实现@+的变化效果*/
 
 #at-plus-container:hover #bottom-positioner {
     background-image: url(assets/images/atplus_green.png);
@@ -49,93 +67,29 @@
     height: 90px;
     border-radius: 100%;
     transition-property: all;
-    transition-duration: 2s;
-    transition-timing-function: ease-in-out;
-}
-
-
-
-
-
-/*第一个按钮跟所有的button的共同属性*/
-
-.button {
-    background-color: grey;
-    border-radius: 100%;
-    position: absolute;
-    right: 0px;
-    bottom: 0%;
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-    visibility: hidden;
-    opacity: 0;
-    transition-property: all;
-    transition-duration: 1s;
-}
-.info {
-    background-color: gray;
-    border-radius: 100%;
-    height: 130px;
-    width: 130px;
-    position: absolute;
-    position: absolute;
-    margin: auto;
-    right: -35px;
-    bottom: 0%;
-    visibility: hidden;
-    opacity: 0;
-    transition-property: all;
-    transition-duration: 1s;
-}
-
-/*第一个按钮的宽高跟别的不一样*/
-
-
-#bottom-positioner {
-    width: 60px;
-    height: 60px;
-    transition-property: all;
     transition-duration: 1s;
 }
 
 
-/*设置自己的宽高 同时设置了transition是为了使得回到原点的时候的效果*/
+/*鼠标控制所有的东西同步实现显示*/
+
+#at-plus-container:hover .button,
+#at-plus-container:hover .info {
+    transition-property: all;
+    visibility: visible;
+    transition-duration: 1s;
+    opacity: 1;
+}
 
 
-
-/*把所有的button中间的图片设置在中间*/
-
-
-
-/*用来使得<li>里面的那个黑点消失*/
+/*使得<li>里面没有小圆点*/
 
 li {
     list-style-type: none;
 }
 
-#info-bar {
-    
-}
-
 
 /*-------------------the big circle*/
-
-
-
-
-/*实现动态效果*/
-
-#at-plus-container:hover .info,
-.mask,
-.history,
-.message,
-.setting,
-.sign {
-    transition-property: all;
-    visibility: visible;
-    transition-duration: 1.5s;
-}
 
 #at-plus-container:hover .info {
     transform: translate(0px, -120px);
@@ -184,14 +138,8 @@ li {
     bottom: 20px;
 }
 
-#control-ring-container {}
 
-.control-ring {}
-
-.hover-c_ring:hover .control-ring {
-    visibility: visible;
-    opacity: 1;
-}
+/*ring内部的东西*/
 
 #at-plus-container:hover .mask {
     background-image: url(assets/images/mask.png);
