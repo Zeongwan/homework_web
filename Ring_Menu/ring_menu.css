@@ -1,117 +1,186 @@
-
-#at-plus-container {
-    
+* {
+    background-color: ;
 }
+
+#at-plus-container {}
+
 #bottom-positioner {
     position: absolute;
     left: 50%;
-    bottom: 0%;
 }
-#button {
-    
+
+
+/*用来控制动态效果的*/
+
+
+/*这里已经不用写了 因为下面的hover已经实现了*/
+
+.trans {}
+
+
+/*hovereffect表示一碰到那个类就会实现的效果*/
+
+
+/*用来控制鼠标触碰到的时候的动态的*/
+
+.hovereffect:hover .button {
+    visibility: visible;
+    opacity: 1;
 }
+
+
+/*设置为hidden为了实现显示*/
+
+.basic,
 .button {
     background-color: gray;
     border-radius: 100%;
+    position: absolute;
+    top: 100px;
+    margin: auto;
     width: 50px;
     height: 50px;
 }
+
+.hovereffect:hover .basic {
+    transition-property: all;
+    visibility: visible;
+    transition-duration: 3s;
+}
+
+.basic {}
+
+.bigger {
+    display: block;
+    width: 80px;
+    height: 80px;
+}
+
+.button {
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+/*把所有的button中间的图片设置在中间*/
+
+.basic img {
+    display: block;
+    padding: 14px;
+    margin: auto;
+}
+
 .button img {
     display: block;
     padding: 14px;
     margin: auto;
 }
 
+
+/*用来使得<li>里面的那个黑点消失*/
+
 li {
     list-style-type: none;
 }
-/*
-.basicbutton {
-    border: 2px solid;
-    border-radius: 100%;
-    background-color: rgb(48, 63, 159);
-    width: 100px;
-    height: 100px;
-    color:black;
-}
-*/
-#info-bar {
-    
-}
+
+#info-bar {}
+
+
 /*-------------------the big circle*/
+
 .info {
     background-color: gray;
     border-radius: 100%;
-    width: 100px;
+    position: absolute;
+    top: 100px;
     height: 100px;
-    transform: translate(0, 50px);
+    width: 100px;
 }
+
+
+/*实现动态效果*/
+
+.hovereffect:hover .info {
+    transition-property: all;
+    visibility: visible;
+    transition-duration: 5s;
+    transform: translate(120px, -120px);
+}
+
+
 /*----------------------------------------*/
 
 .page {
     display: block;
 }
-.user {
-    
-}
-.comment {
-    
-}
 
-.mine {
-    
-}
+.user {}
+
+.comment {}
+
+.mine {}
+
 .posted {
     display: inline;
 }
+
 .like {
     display: inline;
 }
 
-.basicbutton:hover {
-    
-}
-#control-ring-container {
-    transition-property: visibility;
-    transition-duration: 1s;
-}
-.control-ring {
-    visibility: hidden;
-    opacity: 0;
-}
+#control-ring-container {}
 
+.control-ring {}
 
 .hover-c_ring:hover .control-ring {
     visibility: visible;
     opacity: 1;
 }
 
-.tran {
+.hovereffect:hover .mask {
     transition-property: all;
-    transition-duration: 3s;
+    visibility: visible;
+    transition-duration: 5s;
+    transform: translate(-160px, 50px);
 }
-.mask {
-    transform: translate(-60px, 0px);
-    
+
+.unread {}
+
+.hovereffect:hover .history {
+    transition-property: all;
+    visibility: visible;
+    transition-duration: 5s;
+    transform: translate(-180px, 110px);
 }
-.unread {
-    
+
+.hovereffect:hover .message {
+    transition-property: all;
+    visibility: visible;
+    transition-duration: 5s;
+    transform: translate(-200px, 120px);
 }
-.history {
-    transform: translate(-80px, 10px);
-}
-.message {
-    transform: translate(-100px, 20px);
-}
+
 .setting {
-    transform: translate(-80px, 30px);
+    transition-property: all;
+    transition-duration: 5s;
 }
-.sign {
-    transform: translate(-60px, 40px);
+
+.hovereffect:hover .setting {
+    position: relative;
+    transition-property: all;
+    visibility: visible;
+    transition-duration: 5s;
+    transform: translate(-180px, 130px);
 }
-.apb {
-    
+
+.hovereffect:hover .sign {
+    transition-property: all;
+    visibility: visible;
+    transition-duration: 2s;
+    transition-timing-function: ease-out;
+    transform: translate(-160px, 140px);
 }
-.icon {
-    
-}
+
+.apb {}
+
+.icon {}
