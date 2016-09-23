@@ -5,13 +5,17 @@
 #at-plus-container {}
 
 #bottom-positioner {
-    position: absolute;
-    left: 50%;
+
 }
 
 
-/*用来控制动态效果的*/
-
+/*本来用来控制动态效果的，现在用来控制位置*/
+.hovereffect {
+    position: absolute;
+    bottom: 20%;
+    left: 300px;
+    margin: auto;
+}
 
 /*这里已经不用写了 因为下面的hover已经实现了*/
 
@@ -24,55 +28,83 @@
 /*用来控制鼠标触碰到的时候的动态的*/
 
 .hovereffect:hover .button {
+    transition-property: all;
     visibility: visible;
+    transition-duration: 3s;
     opacity: 1;
 }
 
 
 /*设置为hidden为了实现显示*/
-
+.bigger {
+    background-color: gray;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+.hovereffect:hover .basic {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    transition-duration: all;
+    transition-duration: 2s;
+}
+#first {
+    position: relative;
+    left: 19px;
+    top:19px;
+}
+.hovereffect:hover .basic #first{
+    transition-duration: visibility;
+    transition-duration: 0s;
+    visibility: hidden;
+    opacity: 0;
+}
+#second {
+    position: relative;
+    visibility: hidden;
+    left: 13px;
+    opacity: 0;
+}
+.hovereffect:hover .basic #second{
+    transition-duration: visibility;
+    transition-duration: 2s;
+    visibility: visible;
+    opacity: 1;
+}
 .basic,
 .button {
     background-color: gray;
     border-radius: 100%;
     position: absolute;
-    top: 100px;
+    bottom: 20%;
+    left: 300px;
     margin: auto;
-    width: 50px;
-    height: 50px;
 }
 
-.hovereffect:hover .basic {
-    transition-property: all;
-    visibility: visible;
-    transition-duration: 3s;
-}
-
-.basic {}
-
-.bigger {
-    display: block;
-    width: 80px;
-    height: 80px;
+.basic {
+    width: 60px;
+    height: 60px;
 }
 
 .button {
+    width: 50px;
+    height: 50px;
     visibility: hidden;
     opacity: 0;
+    transition-property: all;
+    transition-duration: 5s;
 }
 
 
 /*把所有的button中间的图片设置在中间*/
 
-.basic img {
-    display: block;
-    padding: 14px;
-    margin: auto;
-}
 
 .button img {
-    display: block;
-    padding: 14px;
+    padding: 15px;
     margin: auto;
 }
 
@@ -91,8 +123,6 @@ li {
 .info {
     background-color: gray;
     border-radius: 100%;
-    position: absolute;
-    top: 100px;
     height: 100px;
     width: 100px;
 }
@@ -160,13 +190,7 @@ li {
     transform: translate(-200px, 120px);
 }
 
-.setting {
-    transition-property: all;
-    transition-duration: 5s;
-}
-
 .hovereffect:hover .setting {
-    position: relative;
     transition-property: all;
     visibility: visible;
     transition-duration: 5s;
@@ -183,4 +207,6 @@ li {
 
 .apb {}
 
-.icon {}
+.icon {
+
+}
