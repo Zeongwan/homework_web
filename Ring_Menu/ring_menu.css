@@ -1,25 +1,36 @@
-* {
-    background-color: ;
-}
 
-#at-plus-container {}
-
-#bottom-positioner {}
-
-
-/*表示整个有效果的区*/
-
-.hovereffect {
+#at-plus-container {
     position: absolute;
     bottom: 20%;
     left: 300px;
     margin: auto;
 }
 
+#bottom-positioner {
+    background-color: gray;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 20%;
+    left: 300px;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-image: url(assets/images/atplus_white.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 
 /*用来控制鼠标触碰到的时候的动态的*/
 
-.hovereffect:hover .button {
+#at-plus-container:hover .button {
+    transition-property: all;
+    visibility: visible;
+    transition-duration: 3s;
+    opacity: 1;
+}
+#at-plus-container:hover .info {
     transition-property: all;
     visibility: visible;
     transition-duration: 3s;
@@ -29,90 +40,72 @@
 
 /*设置为hidden为了实现显示*/
 
-.hovereffect:hover .basic {
+#at-plus-container:hover #bottom-positioner {
+    background-image: url(assets/images/atplus_green.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0b1bdb;
     width: 90px;
     height: 90px;
     border-radius: 100%;
     transition-property: all;
     transition-duration: 2s;
-}
-
-#first {
-    position: relative;
-    left: 19px;
-    top: 19px;
+    transition-timing-function: ease-in-out;
 }
 
 
-/*设置当鼠标碰到第一个@+的时候 会消失*/
 
-.hovereffect:hover .basic #first {
-    transition-duration: visibility;
-    transition-duration: 0s;
-    visibility: hidden;
-    opacity: 0;
-}
-
-
-/*大的@+会一开始是隐藏的 后来变出来*/
-
-#second {
-    position: relative;
-    visibility: hidden;
-    left: 13px;
-    opacity: 0;
-}
-
-
-/*遇到第一个@+的消失效果*/
-
-.hovereffect:hover .basic #second {
-    transition-duration: visibility;
-    transition-duration: 2s;
-    visibility: visible;
-    opacity: 1;
-}
 
 
 /*第一个按钮跟所有的button的共同属性*/
 
-.basic,
 .button {
-    background-color: gray;
+    background-color: grey;
     border-radius: 100%;
     position: absolute;
-    bottom: 20%;
-    left: 300px;
-    margin: auto;
-}
-
-
-/*第一个按钮的宽高跟别的不一样*/
-
-.basic {
+    right: 0px;
+    bottom: 0%;
     width: 60px;
     height: 60px;
+    border-radius: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 1s;
 }
-
-
-/*设置自己的宽高 同时设置了transition是为了使得回到原点的时候的效果*/
-
-.button {
-    width: 50px;
-    height: 50px;
+.info {
+    background-color: gray;
+    border-radius: 100%;
+    height: 130px;
+    width: 130px;
+    position: absolute;
+    position: absolute;
+    margin: auto;
+    right: -35px;
+    bottom: 0%;
     visibility: hidden;
     opacity: 0;
     transition-property: all;
     transition-duration: 1s;
 }
 
+/*第一个按钮的宽高跟别的不一样*/
+
+
+#bottom-positioner {
+    width: 60px;
+    height: 60px;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+
+/*设置自己的宽高 同时设置了transition是为了使得回到原点的时候的效果*/
+
+
 
 /*把所有的button中间的图片设置在中间*/
 
-.button img {
-    padding: 15px;
-    margin: auto;
-}
 
 
 /*用来使得<li>里面的那个黑点消失*/
@@ -121,23 +114,19 @@ li {
     list-style-type: none;
 }
 
-#info-bar {}
+#info-bar {
+    
+}
 
 
 /*-------------------the big circle*/
 
-.info {
-    background-color: gray;
-    border-radius: 100%;
-    height: 130px;
-    width: 130px;
-    left: 270px;
-}
+
 
 
 /*实现动态效果*/
 
-.hovereffect:hover .info,
+#at-plus-container:hover .info,
 .mask,
 .history,
 .message,
@@ -148,7 +137,7 @@ li {
     transition-duration: 1.5s;
 }
 
-.hovereffect:hover .info {
+#at-plus-container:hover .info {
     transform: translate(0px, -120px);
 }
 
@@ -156,51 +145,43 @@ li {
 /*-----------------以下为了设置大圈圈里面的各个位置的信息---------------------*/
 
 .page {
-    height: 30px;
+    height: 25px;
 }
 
 .user {
     position: relative;
-    bottom: 20px;
-    right: 10px;
 }
 
-.usernum {
+.page span {
     color: white;
     font-size: 15pt;
     position: relative;
-    bottom: 16px;
-    right: 12px;
+    left: 5px;
 }
 
 .comment {
     position: relative;
-    bottom: 20px;
-    right: 10px;
 }
 
 .mine {
-    height: 30px;
+    height: 20px;
 }
 
-.minenum {
+.mine span {
     color: green;
     font-size: 18pt;
     position: relative;
-    bottom: 16px;
-    right: 10px;
 }
 
 .posted {
     position: relative;
-    bottom: 15px;
-    right: 40px;
+    right: 20px;
 }
 
 .like {
     position: relative;
-    bottom: 45px;
-    left: 15px;
+    left: 40px;
+    bottom: 20px;
 }
 
 #control-ring-container {}
@@ -212,8 +193,11 @@ li {
     opacity: 1;
 }
 
-.hovereffect:hover .mask {
-    transform: translate(-80px, -80px);
+#at-plus-container:hover .mask {
+    background-image: url(assets/images/mask.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-100px, -100px);
 }
 
 .unread {
@@ -221,28 +205,39 @@ li {
     position: relative;
     width: 18px;
     height: 18px;
-    left: 35px;
-    bottom: 50px;
+    left: 40px;
     color: white;
     background-color: red;
     border-radius: 100%;
     text-align: center;
 }
 
-.hovereffect:hover .history {
-    transform: translate(-100px, -12px);
+#at-plus-container:hover .history {
+    background-image: url(assets/images/history.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-120px, -30px);
 }
 
-.hovereffect:hover .message {
-    transform: translate(-80px, 55px);
+#at-plus-container:hover .message {
+    background-image: url(assets/images/message.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-100px, 42px);
 }
 
-.hovereffect:hover .setting {
-    transform: translate(-10px, 80px);
+#at-plus-container:hover .setting {
+    background-image: url(assets/images/setting.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-30px, 80px);
 }
 
-.hovereffect:hover .sign {
-    transform: translate(70px, 70px);
+#at-plus-container:hover .sign {
+    background-image: url(assets/images/signout.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(55px, 65px);
 }
 
 .apb {}
