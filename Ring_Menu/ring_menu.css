@@ -25,15 +25,20 @@
 /*一开始是一个白色的@+*/
 
 #bottom-positioner {
+    width: 40px;
+    height: 40px;
     bottom: 20%;
     left: 300px;
     margin: auto;
     background-image: url(assets/images/atplus_white.png);
+    background-color: rgba(48, 63, 159, 1);
     background-position: center;
     background-repeat: no-repeat;
-    transition-property: all;
-    transition-timing-function: ease-out;
-    transition-duration: 1s;
+    transition: all 1s 1.5s ease-in-out;
+    /*
+    transition-duration: 0.5s 1s;
+    transition-timing-function: ease-in-out;
+*/
 }
 
 
@@ -45,14 +50,23 @@
     bottom: 0%;
     visibility: hidden;
     opacity: 0;
-    transition-property: all;
-    transition-duration: 1s;
+    transition: all 1s linear;
 }
 
 .info {
     height: 130px;
     width: 130px;
     right: -35px;
+}
+
+
+/*灰色框框的效果*/
+
+#at-plus-container:hover .button,
+#at-plus-container:hover .info {
+    transition: all 1s linear;
+    visibility: visible;
+    opacity: 1;
 }
 
 
@@ -63,22 +77,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-color: #0b1bdb;
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     border-radius: 100%;
-    transition-property: all;
-    transition-duration: 1s;
-}
-
-
-/*鼠标控制所有的东西同步实现显示*/
-
-#at-plus-container:hover .button,
-#at-plus-container:hover .info {
-    transition-property: all;
-    visibility: visible;
-    transition-duration: 1s;
-    opacity: 1;
+    transition: all 1s 0s linear;
 }
 
 
@@ -99,7 +101,7 @@ li {
 /*-----------------以下为了设置大圈圈里面的各个位置的信息---------------------*/
 
 .page {
-    height: 25px;
+    height: 30px;
 }
 
 .user {
@@ -110,11 +112,16 @@ li {
     color: white;
     font-size: 15pt;
     position: relative;
-    left: 5px;
+    left: 8px;
+    bottom: 5px;
 }
 
 .comment {
     position: relative;
+}
+
+.comment span {
+    font-size: 20pt;
 }
 
 .mine {
@@ -122,8 +129,10 @@ li {
 }
 
 .mine span {
-    color: green;
+    color: #079E6E;
     font-size: 18pt;
+    font-weight: bolder;
+    left: 7px;
     position: relative;
 }
 
@@ -134,7 +143,7 @@ li {
 
 .like {
     position: relative;
-    left: 40px;
+    left: 30px;
     bottom: 20px;
 }
 
